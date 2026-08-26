@@ -1,5 +1,5 @@
 {
-  "name": "matchpulse-ai",
+  "name": "matchpulse-sports",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,7 +7,20 @@
     "start": "node --env-file-if-exists=.env server.mjs",
     "test": "node --test server.test.mjs",
     "test:secret": "vitest run secret.test.js",
-    "check": "node --check server.mjs && node --check public/app.js"
+    "check": "node --check server.mjs && node --check public/app.js",
+    "mobile:sync": "npm run mobile:build && npx cap sync android",
+    "mobile:open": "npx cap open android",
+    "mobile:build": "rm -rf mobile-web && mkdir mobile-web && cp -a public/. mobile-web/"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/core": "^8.5.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.0",
+    "vitest": "^4.1.11"
+  }
 }

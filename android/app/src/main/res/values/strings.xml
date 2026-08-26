@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MatchPulse-Sports</string>
+    <string name="title_activity_main">MatchPulse-Sports</string>
+    <string name="package_name">com.abdelatizarzori3.matchpulsesports</string>
+    <string name="custom_url_scheme">com.abdelatizarzori3.matchpulsesports</string>
+</resources>
