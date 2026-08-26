@@ -2,3 +2,4 @@
 
 .filters{display:flex;gap:8px;flex-wrap:wrap}.filters select{background:#102840;border:1px solid #31536b;border-radius:10px;color:#eaf5ff;padding:10px 12px}.summary{display:inline-block;color:#6fe6be;font-size:.78rem;margin-inline-start:8px}
 @media(max-width:680px){.filters{width:100%}.filters select,.filters .primary{flex:1}}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.metrics article{background:linear-gradient(145deg,#102b43,#0d1d30);border:1px solid #1d4963;border-radius:16px;padding:17px;display:flex;flex-direction:column;gap:8px}.metrics span{color:#8aaec2;font-size:.78rem}.metrics strong{font-size:1.55rem;color:#eaf7ff}@media(max-width:680px){.metrics{grid-template-columns:repeat(2,1fr)}}
