@@ -34,8 +34,14 @@ body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 85% -
 .fixture-top { margin-bottom: 11px; color: #8eafc1; font-size: .72rem; }
 .fixture-time { color: #e5f6ff; font-weight: 800; }
 .teams { font-size: .95rem; }
-.team { flex: 1; min-width: 0; }
-.team.away { text-align: left; }
+.team { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; }
+.team.away { justify-content: flex-end; text-align: left; }
+.team-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.team-badge { display: grid; place-items: center; flex: 0 0 2.2rem; width: 2.2rem; height: 2.2rem; overflow: hidden; border: 1px solid #2c5972; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #1a4964, #071521); box-shadow: 0 0 14px #1d8ab133; }
+.team-logo { display: block; width: 100%; height: 100%; padding: 3px; object-fit: contain; }
+.team-badge b { display: none; color: #b9efff; font-size: .62rem; letter-spacing: .03em; }
+.team-badge.is-fallback .team-logo { display: none; }
+.team-badge.is-fallback b { display: block; }
 .score { flex: 0 0 auto; color: #f4fbff; background: #06131f; border-radius: 8px; padding: 6px 10px; font-weight: 900; }
 .probability-line { margin-top: 12px; padding-top: 10px; color: #9eb7c6; border-top: 1px solid #17374e; font-size: .75rem; }
 .probability-track { flex: 1; min-width: 7rem; max-width: 13rem; height: 6px; overflow: hidden; background: #223a4a; border-radius: 999px; }

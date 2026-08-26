@@ -16,7 +16,12 @@ test('MatchPulse exposes real source-feed state and keeps scheduled fixtures inc
   assert.match(script, /function isScheduledStatus/);
   assert.match(script, /value === 'SCHEDULED' \|\| value === 'TIMED'/);
   assert.match(script, /analysisUnavailable/);
+  assert.match(script, /function crestMarkup/);
+  assert.match(script, /function bindClubCrests/);
+  assert.match(script, /homeCrest/);
   assert.doesNotMatch(script, /Math\.random\(\).*prediction/);
   assert.match(mobileHtml, /id="feed-indicator"/);
   assert.match(mobileScript, /function setFeedState/);
+  assert.match(mobileScript, /function crestMarkup/);
+  assert.match(mobileScript, /function bindClubCrests/);
 });
