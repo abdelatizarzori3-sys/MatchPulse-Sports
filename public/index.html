@@ -4,11 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MatchPulse AI — تحليل المباريات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <main class="shell">
-    <header class="hero"><div><p class="eyebrow">MATCHPULSE AI · WEEKLY FIXTURES</p><h1>نبض المباريات</h1><p class="lead">مباريات الأسبوع من المصدر، منظمة حسب البطولة، مع حالة تحليل صادقة لكل مباراة.</p></div><button id="language" class="ghost">English</button></header>
+    <header class="hero"><div><p class="eyebrow">MATCHPULSE AI · WEEKLY FIXTURES</p><h1>نبض المباريات</h1><p class="lead">مباريات الأسبوع من المصدر، منظمة حسب البطولة، مع حالة تحليل صادقة لكل مباراة.</p><div id="feed-indicator" class="feed-indicator" data-state="loading"><i></i><span id="feed-label">جاري التحقق من تغذية المصدر</span></div></div><button id="language" class="ghost">English</button></header>
     <section class="toolbar"><div><strong id="count">0</strong> مباراة هذا الأسبوع <span id="summary" class="summary"></span></div><div class="filters"><select id="competitionFilter" aria-label="تصفية البطولة"><option value="">كل البطولات</option></select><select id="statusFilter" aria-label="تصفية الحالة"><option value="">كل الحالات</option><option value="SCHEDULED">مجدولة</option><option value="IN_PLAY">مباشرة</option><option value="FINISHED">منتهية</option></select><button id="refresh" class="primary">تحديث الجدول</button></div></section>
     <nav id="week-days" class="week-days" aria-label="أيام مباريات الأسبوع"></nav>
     <section id="notice" class="notice">جاري تحميل جدول المباريات…</section><section class="metrics" aria-label="ملخص المباريات"><article><span>المباريات الظاهرة</span><strong id="metricVisible">0</strong></article><article><span>المباشرة</span><strong id="metricLive">0</strong></article><article><span>تحليل متاح</span><strong id="metricAnalysed">0%</strong></article><article><span>المصدر</span><strong id="metricSource">—</strong></article></section>
