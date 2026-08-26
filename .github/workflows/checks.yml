@@ -19,3 +19,9 @@ jobs:
       - run: npm run check
       - run: npm test
       - run: npm run test:secret
+      - name: Scan tracked files for exposed tokens
+        run: |
+          if git grep -n -E 'FOOTBALL_DATA_TOKEN[[:space:]]*=[[:space:]]*[A-Za-z0-9_-]{20,}' -- ':!*.example' ':!*.md'; then
+            echo 'A real token was found in tracked source files.'
+            exit 1
+          fi
