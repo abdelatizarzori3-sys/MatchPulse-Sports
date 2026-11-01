@@ -9,19 +9,19 @@ const script = readFileSync(resolve(root, 'public/app.js'), 'utf8');
 const mobileHtml = readFileSync(resolve(root, 'mobile-web/index.html'), 'utf8');
 const mobileScript = readFileSync(resolve(root, 'mobile-web/app.js'), 'utf8');
 
-test('MatchPulse exposes real source-feed state and keeps scheduled fixtures inclusive', () => {
+test('MatchPulse exposes source feed status and a server-gated calendar export in web and mobile assets', () => {
   assert.match(html, /id="feed-indicator"/);
-  assert.match(html, /id="feed-label"/);
+  assert.match(html, /id="calendar-export"/);
+  assert.match(html, /id="export-visible"/);
+  assert.match(html, /id="export-selected"/);
   assert.match(script, /function setFeedState/);
   assert.match(script, /function isScheduledStatus/);
-  assert.match(script, /value === 'SCHEDULED' \|\| value === 'TIMED'/);
-  assert.match(script, /analysisUnavailable/);
-  assert.match(script, /function crestMarkup/);
-  assert.match(script, /function bindClubCrests/);
-  assert.match(script, /homeCrest/);
+  assert.match(script, /function isCalendarEligible/);
+  assert.match(script, /api\/pro\/entitlement/);
+  assert.match(script, /api\/pro\/calendar\/export/);
+  assert.match(script, /state\.entitlement\.allowed/);
+  assert.doesNotMatch(script, /matchpulse.*entitlement.*localStorage/i);
   assert.doesNotMatch(script, /Math\.random\(\).*prediction/);
-  assert.match(mobileHtml, /id="feed-indicator"/);
-  assert.match(mobileScript, /function setFeedState/);
-  assert.match(mobileScript, /function crestMarkup/);
-  assert.match(mobileScript, /function bindClubCrests/);
+  assert.match(mobileHtml, /id="calendar-export"/);
+  assert.match(mobileScript, /api\/pro\/calendar\/export/);
 });
